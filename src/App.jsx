@@ -11,12 +11,12 @@ function App() {
 
   const getQuote = async () => {
     const BASE_URL = "https://api.api-ninjas.com/v1/quotes";
-    const API_KEY = "nbORZXsk6/44fzMj1SblwA==ivY59hHP2tMIMbNu";
+    const apiKey = import.meta.env.VITE_API_KEY;
 
     try {
       const response = await axios.get(`${BASE_URL}?category=education`, {
         headers: {
-          "X-Api-Key": API_KEY,
+          "X-Api-Key": apiKey,
         },
       });
       const data = response.data[0];
